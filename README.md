@@ -1,2 +1,2 @@
 # opengatescoaching
-Official website for Open Gates Counseling &amp; Coaching
+Official website for Open Gates Coaching
