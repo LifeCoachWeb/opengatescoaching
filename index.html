@@ -2,70 +2,230 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Open Gates Counseling & Coaching</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f5f0;
-      color: #2f2f2f;
-      text-align: center;
-    }
+  <meta
+    name="description"
+    content="Open Gates offers professional and welcoming life coaching and eating disorder coaching services, available virtually and in person."
+  >
 
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
+  <title>Open Gates Coaching</title>
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 16px;
-    }
-
-    p {
-      font-size: 19px;
-      line-height: 1.6;
-    }
-
-    .contact {
-      margin-top: 36px;
-    }
-
-    a {
-      color: #315b4c;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo-link" href="#home" aria-label="Open Gates home">
+        <img
+          class="logo"
+          src="images/open-gates-logo.png"
+          alt="Open Gates Counseling and Coaching"
+        >
+      </a>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        Menu
+      </button>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#coaches">Coaches</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <h1>Open the Gate to Meaningful Change</h1>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <p class="eyebrow">Professional and compassionate coaching</p>
 
-    <p>
-      Professional and compassionate coaching designed to help you move
-      forward with clarity, confidence, and support.
-    </p>
+        <h1>Open the Gate to Meaningful Change</h1>
 
-    <p>
-      Open Gates offers life coaching with Harold Gates and eating disorder
-      coaching with Roxanne Gates. Services are available virtually and
-      in person.
-    </p>
+        <p class="hero-text">
+          Personalized coaching to help you move forward with clarity,
+          confidence, and support.
+        </p>
 
-    <div class="contact">
+        <div class="hero-actions">
+          <a class="button primary-button" href="#contact">
+            Request a Conversation
+          </a>
+
+          <a class="button secondary-button" href="tel:+12173710506">
+            Call 217-371-0506
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container narrow">
+        <p class="section-label">About Open Gates</p>
+
+        <h2>A welcoming place to take your next step</h2>
+
+        <p>
+          Open Gates provides professional, respectful coaching for individuals
+          seeking personal growth, greater confidence, healthier patterns, and
+          meaningful progress.
+        </p>
+
+        <p>
+          Coaching is available virtually and in person. Meeting details for
+          in-person appointments are shared directly with confirmed clients.
+        </p>
+      </div>
+    </section>
+
+    <section class="section soft-background" id="services">
+      <div class="container">
+        <p class="section-label">Our Services</p>
+
+        <h2>Personalized support for your goals</h2>
+
+        <div class="card-grid">
+          <article class="service-card">
+            <h3>Life Coaching</h3>
+
+            <p>
+              Harold Gates helps clients identify goals, work through
+              obstacles, strengthen confidence, and create practical steps
+              toward personal growth.
+            </p>
+
+            <p>
+              Coaching may include life transitions, motivation,
+              accountability, purpose, relationships, and personal
+              development.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Eating Disorder Coaching</h3>
+
+            <p>
+              Roxanne Gates provides compassionate coaching support for people
+              navigating concerns related to eating disorders, body image,
+              recovery, and healthy routines.
+            </p>
+
+            <p>
+              Coaching is designed to complement, not replace, appropriate
+              medical or mental-health treatment.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="coaches">
+      <div class="container">
+        <p class="section-label">Meet the Coaches</p>
+
+        <h2>Professional guidance with a personal approach</h2>
+
+        <div class="card-grid">
+          <article class="coach-card">
+            <div class="initial-circle" aria-hidden="true">HG</div>
+
+            <h3>Harold Gates</h3>
+
+            <p class="coach-title">Life Coach</p>
+
+            <p>
+              Harold offers practical, goal-focused coaching for individuals
+              ready to move forward with greater direction, accountability,
+              and confidence.
+            </p>
+          </article>
+
+          <article class="coach-card">
+            <div class="initial-circle" aria-hidden="true">RG</div>
+
+            <h3>Roxanne Gates</h3>
+
+            <p class="coach-title">Eating Disorder Coach</p>
+
+            <p>
+              Roxanne offers compassionate support centered on encouragement,
+              healthier patterns, recovery goals, and personal well-being.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container narrow">
+        <p class="section-label">Contact Open Gates</p>
+
+        <h2>Start the conversation</h2>
+
+        <p>
+          Contact Harold and Roxanne to ask questions or discuss whether Open
+          Gates coaching may be a good fit for your goals.
+        </p>
+
+        <div class="contact-links">
+          <a href="tel:+12173710506">217-371-0506</a>
+
+          <a href="mailto:hgates62@gmail.com">
+            hgates62@gmail.com
+          </a>
+        </div>
+
+        <p class="contact-note">
+          Please do not include private medical information, diagnoses, or
+          emergency concerns in an email or voicemail.
+        </p>
+      </div>
+    </section>
+
+    <section class="disclaimer">
+      <div class="container narrow">
+        <h2>Important Notice</h2>
+
+        <p>
+          Coaching is not psychotherapy, medical treatment, psychiatric care,
+          nutritional treatment, or emergency services. Open Gates does not
+          diagnose or treat medical or mental-health conditions.
+        </p>
+
+        <p>
+          Individuals experiencing an eating disorder should continue working
+          with appropriately qualified healthcare professionals. In an
+          emergency, call 911 or contact an appropriate emergency service.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
       <p>
-        <a href="tel:+12173710506">217-371-0506</a>
+        &copy; <span id="current-year"></span> Open Gates Counseling &amp;
+        Coaching
       </p>
 
       <p>
-        <a href="mailto:hgates62@gmail.com">hgates62@gmail.com</a>
+        Virtual and in-person coaching
       </p>
     </div>
-  </main>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
