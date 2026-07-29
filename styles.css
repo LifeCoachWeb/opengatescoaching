@@ -878,6 +878,11 @@ p {
 }
 
 
+.get-started-card.get-started-card-primary > p:not(.get-started-label) {
+  color: var(--white);
+}
+
+
 .get-started-button {
   width: 100%;
   margin-top: auto;
