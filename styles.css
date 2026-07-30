@@ -1088,9 +1088,7 @@ p {
   padding: 130px 0;
   color: var(--white);
   background:
-    url("images/stock/autumn-neighborhood-street.jpg") center / cover no-repeat,
-    url("images/stock/autumn-neighborhood-street.jpeg") center / cover no-repeat,
-    url("images/stock/AdobeStock_2097113913.jpeg") center / cover no-repeat;
+    url("images/stock/autumn-neighborhood-street.jpg.jpeg") center / cover no-repeat;
 }
 
 .statement-overlay {
