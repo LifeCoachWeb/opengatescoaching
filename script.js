@@ -1,3 +1,22 @@
+function useNextImageSource(image) {
+  const fallbackSources = (image.dataset.fallbacks || "")
+    .split("|")
+    .map((source) => source.trim())
+    .filter(Boolean);
+
+  const fallbackIndex = Number(image.dataset.fallbackIndex || 0);
+
+  if (fallbackIndex >= fallbackSources.length) {
+    image.onerror = null;
+    image.classList.add("image-load-failed");
+    console.warn(`Unable to load image: ${image.alt || image.src}`);
+    return;
+  }
+
+  image.dataset.fallbackIndex = String(fallbackIndex + 1);
+  image.src = fallbackSources[fallbackIndex];
+}
+
 const menuButton = document.querySelector(".menu-button");
 const navigation = document.querySelector(".site-nav");
 const year = document.querySelector("#current-year");
