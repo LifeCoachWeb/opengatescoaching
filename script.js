@@ -3,15 +3,12 @@ const navigation = document.querySelector(".site-nav");
 const year = document.querySelector("#current-year");
 const revealElements = document.querySelectorAll(".reveal");
 
-
 if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-
 function closeMenu() {
   if (!menuButton || !navigation) return;
-
 
   navigation.classList.remove("is-open");
   document.body.classList.remove("menu-open");
@@ -19,11 +16,9 @@ function closeMenu() {
   menuButton.setAttribute("aria-label", "Open navigation menu");
 }
 
-
 if (menuButton && navigation) {
   menuButton.addEventListener("click", () => {
     const isOpen = navigation.classList.toggle("is-open");
-
 
     document.body.classList.toggle("menu-open", isOpen);
     menuButton.setAttribute("aria-expanded", String(isOpen));
@@ -33,18 +28,15 @@ if (menuButton && navigation) {
     );
   });
 
-
   navigation.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
-
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 880) {
       closeMenu();
     }
   });
-
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
@@ -53,13 +45,11 @@ if (menuButton && navigation) {
   });
 }
 
-
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
     (entries, activeObserver) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-
 
         entry.target.classList.add("is-visible");
         activeObserver.unobserve(entry.target);
@@ -71,8 +61,9 @@ if ("IntersectionObserver" in window) {
     }
   );
 
-
-  revealElements.forEach((element) => observer.observe(element));
+  revealElements.forEach((element) => {
+    observer.observe(element);
+  });
 } else {
   revealElements.forEach((element) => {
     element.classList.add("is-visible");
