@@ -1,24 +1,6 @@
-function useNextImageSource(image) {
-  const fallbackSources = (image.dataset.fallbacks || "")
-    .split("|")
-    .map((source) => source.trim())
-    .filter(Boolean);
-
-  const fallbackIndex = Number(image.dataset.fallbackIndex || 0);
-
-  if (fallbackIndex >= fallbackSources.length) {
-    image.onerror = null;
-    image.classList.add("image-load-failed");
-    console.warn(`Unable to load image: ${image.alt || image.src}`);
-    return;
-  }
-
-  image.dataset.fallbackIndex = String(fallbackIndex + 1);
-  image.src = fallbackSources[fallbackIndex];
-}
-
 const menuButton = document.querySelector(".menu-button");
 const navigation = document.querySelector(".site-nav");
+const siteHeader = document.querySelector(".site-header");
 const year = document.querySelector("#current-year");
 const revealElements = document.querySelectorAll(".reveal");
 
@@ -63,6 +45,14 @@ if (menuButton && navigation) {
     }
   });
 }
+
+function updateHeaderState() {
+  if (!siteHeader) return;
+  siteHeader.classList.toggle("is-scrolled", window.scrollY > 12);
+}
+
+updateHeaderState();
+window.addEventListener("scroll", updateHeaderState, { passive: true });
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(

@@ -6,7 +6,7 @@
 
   <meta
     name="description"
-    content="Open Gates offers supportive life, recovery, and wellness coaching with Harold and Roxanne Gates. Virtual and in-person appointments are available."
+    content="Open Gates offers supportive life, recovery, and wellness coaching with Harold and Roxanne Gates. Complimentary consultations are available virtually and in person."
   >
 
   <title>Open Gates Counseling &amp; Coaching</title>
@@ -19,30 +19,26 @@
   >
 
   <meta name="theme-color" content="#262262">
-
-  <script>
-    function useNextImageSource(image) {
-      const remainingSources = (image.dataset.fallbacks || "")
-        .split("|")
-        .filter(Boolean);
-
-      const nextSource = remainingSources.shift();
-
-      if (!nextSource) {
-        image.onerror = null;
-        return;
-      }
-
-      image.dataset.fallbacks = remainingSources.join("|");
-      image.src = nextSource;
-    }
-  </script>
-
-  <link rel="stylesheet" href="styles.css?v=20260730-3">
+  <link rel="stylesheet" href="styles.css?v=20260730-6">
+  <script src="script.js?v=20260730-6" defer></script>
 </head>
 
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <p>Complimentary consultations are available with Harold and Roxanne.</p>
+      <a
+        href="https://calendar.app.google/16QZK1eRtKJX5RTVA"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Choose a time
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
 
   <header class="site-header">
     <div class="container header-inner">
@@ -61,128 +57,167 @@
         aria-expanded="false"
         aria-controls="main-navigation"
       >
-        <span>Menu</span>
+        <span class="menu-button-label">Menu</span>
+        <span class="menu-button-lines" aria-hidden="true"></span>
       </button>
 
       <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#services">Coaching</a>
-        <a href="#process">What to expect</a>
-        <a href="#coaches">Harold &amp; Roxanne</a>
-        <a href="#get-started">Get started</a>
-        <a class="nav-cta" href="#contact">Talk with us</a>
+        <a href="#coaches">Coaches</a>
+        <a href="#process">How it works</a>
+        <a class="nav-cta" href="#get-started">Get started</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
     <section class="hero" id="home">
+      <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+
       <div class="container hero-layout">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Life, recovery, and wellness coaching</p>
+          <p class="eyebrow">Personal coaching with Harold and Roxanne Gates</p>
 
           <h1>
-            Open the gate
-            <span>to what comes next.</span>
+            Open the gate to a
+            <span>clearer next step.</span>
           </h1>
 
           <p class="hero-text">
-            You do not need a perfect plan before you reach out. Start with an
-            honest conversation about what has been weighing on you, what you
-            want to change, and one next step that feels possible.
+            You do not have to arrive with the right words or a perfect plan.
+            Bring what has been weighing on you. Together, you can sort through
+            it and decide what feels useful, realistic, and possible.
           </p>
 
           <div class="hero-actions">
-            <a class="button primary-button" href="#get-started">
-              Schedule a consultation
+            <a
+              class="button primary-button"
+              href="https://calendar.app.google/16QZK1eRtKJX5RTVA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a free consultation
+              <span aria-hidden="true">↗</span>
             </a>
 
-            <a class="button text-button" href="#services">
-              Explore coaching options
-              <span aria-hidden="true">↗</span>
+            <a class="button quiet-button" href="#services">
+              Explore coaching
+              <span aria-hidden="true">↓</span>
             </a>
           </div>
 
-          <div class="hero-details" aria-label="Appointment details">
+          <div class="hero-trust" aria-label="Consultation details">
+            <span>Complimentary first conversation</span>
             <span>Virtual and in person</span>
-            <span>Complimentary consultation</span>
+            <span>No pressure to continue</span>
           </div>
         </div>
 
         <div class="hero-visual reveal">
-          <figure class="hero-photo-frame">
+          <div class="hero-arch-outline" aria-hidden="true"></div>
+
+          <figure class="hero-arch-frame">
             <img
               class="hero-photo"
               src="images/stock/winding-path.jpg.jpeg"
-              data-fallbacks="images/stock/winding-path.jpeg|images/stock/AdobeStock_1491560507.jpeg|images/winding-path.jpg|images/AdobeStock_1491560507.jpeg"
-              onerror="useNextImageSource(this)"
               alt="A winding path through a quiet green field"
             >
           </figure>
 
-          <div class="hero-photo-note">
-            <img src="Icons/33-forward-progress.svg" alt="" aria-hidden="true">
-            <p>A clearer way forward can begin with one conversation.</p>
+          <div class="hero-message-card">
+            <img
+              src="Icons/33-forward-progress.svg"
+              alt=""
+              aria-hidden="true"
+            >
+            <p>One honest conversation can make the path feel less tangled.</p>
           </div>
-        </div>
-      </div>
 
-      <div class="marquee" aria-label="What coaching can feel like">
-        <div class="marquee-track">
-          <span>Bring what is on your mind</span><b>•</b>
-          <span>Talk it through</span><b>•</b>
-          <span>Notice what matters</span><b>•</b>
-          <span>Choose one doable step</span><b>•</b>
-          <span>Move at your own pace</span><b>•</b>
-          <span>Bring what is on your mind</span><b>•</b>
-          <span>Talk it through</span><b>•</b>
-          <span>Notice what matters</span><b>•</b>
-          <span>Choose one doable step</span><b>•</b>
-          <span>Move at your own pace</span><b>•</b>
+          <div class="hero-small-shape" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
-    <section class="story-section section" id="about">
-      <div class="container story-grid">
-        <div class="story-image-wrap reveal">
+    <section class="quick-view" aria-label="A quick introduction to Open Gates">
+      <div class="container quick-view-grid">
+        <article class="quick-view-item reveal">
+          <span class="quick-view-number">01</span>
+          <div>
+            <h2>Who it is for</h2>
+            <p>
+              People facing a change, a difficult decision, a stubborn pattern,
+              or a season that no longer feels right.
+            </p>
+          </div>
+        </article>
+
+        <article class="quick-view-item reveal">
+          <span class="quick-view-number">02</span>
+          <div>
+            <h2>What you can work on</h2>
+            <p>
+              Clarity, routines, personal goals, follow-through, recovery
+              support, relationships, and everyday decisions.
+            </p>
+          </div>
+        </article>
+
+        <article class="quick-view-item reveal">
+          <span class="quick-view-number">03</span>
+          <div>
+            <h2>How it begins</h2>
+            <p>
+              A complimentary conversation with Harold or Roxanne, followed
+              only by the next steps that feel right.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="familiar-section section" id="about">
+      <div class="container familiar-grid">
+        <div class="familiar-media reveal">
           <img
-            class="story-image"
+            class="familiar-image"
             src="images/stock/supportive-coaching-conversation.jpg.jpeg"
-              data-fallbacks="images/stock/supportive-coaching-conversation.jpeg|images/stock/AdobeStock_2018708456.jpeg|images/supportive-coaching-conversation.jpg|images/AdobeStock_2018708456.jpeg"
-              onerror="useNextImageSource(this)"
-            alt="A supportive conversation in a calm, comfortable setting"
+            alt="A supportive conversation in a calm room"
             loading="lazy"
           >
-          <div class="story-image-caption">
-            <img src="Icons/26-one-on-one-coaching.svg" alt="" aria-hidden="true">
-            <span>Real conversation. Practical support.</span>
+
+          <div class="familiar-caption">
+            <img
+              src="Icons/26-one-on-one-coaching.svg"
+              alt=""
+              aria-hidden="true"
+            >
+            <span>A real conversation, not a lecture.</span>
           </div>
         </div>
 
-        <div class="story-copy reveal">
-          <p class="section-label">You can begin here</p>
-          <h2>Everyone starts somewhere.</h2>
+        <div class="familiar-copy reveal">
+          <p class="section-label">Does this sound familiar?</p>
+          <h2>You know something needs to shift, but the next step is not clear.</h2>
 
-          <p class="large-copy">
-            Most people do not reach out because everything is clear. They
-            reach out because a decision keeps circling, a pattern is hard to
-            change, or life no longer feels quite right.
+          <p class="familiar-intro">
+            Most people do not reach out because everything makes sense. They
+            reach out because they are tired of carrying the same question,
+            pattern, or pressure by themselves.
           </p>
 
-          <p>
-            Your first conversation is a place to slow down and say what has
-            been weighing on you. Harold or Roxanne will listen, ask thoughtful
-            questions, and help you decide what would be useful to work on.
-          </p>
-
-          <p>
-            Appointments are available virtually and in person. In-person
-            meeting details are shared after your appointment is confirmed.
-          </p>
+          <ul class="familiar-list">
+            <li>A decision keeps circling without getting easier.</li>
+            <li>You want change, but not another all-or-nothing plan.</li>
+            <li>A routine or pattern keeps pulling you back.</li>
+            <li>You need a calm place to say what is really going on.</li>
+            <li>You want practical support and gentle accountability.</li>
+            <li>You are ready for goals that fit your actual life.</li>
+          </ul>
 
           <a class="inline-link" href="#get-started">
-            See how to get started
+            Start with a conversation
             <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -190,10 +225,16 @@
     </section>
 
     <section class="services-section section" id="services">
+      <div class="services-shape services-shape-one" aria-hidden="true"></div>
+      <div class="services-shape services-shape-two" aria-hidden="true"></div>
+
       <div class="container">
-        <div class="section-heading services-heading reveal">
-          <p class="section-label">Two coaching options</p>
-          <h2>Choose the conversation that fits what you are carrying.</h2>
+        <div class="services-heading reveal">
+          <div>
+            <p class="section-label light-label">Two coaching paths</p>
+            <h2>Choose the conversation that fits what you are carrying.</h2>
+          </div>
+
           <p>
             You may know exactly what you want to work on. You may only know
             that you are tired of feeling stuck. Either is enough for a first
@@ -203,21 +244,20 @@
 
         <div class="service-grid">
           <article class="service-card reveal">
-            <div class="service-image-wrap">
+            <div class="service-media">
               <img
                 class="service-image"
                 src="images/stock/reflection-journal-desk.jpg.jpeg"
-              data-fallbacks="images/stock/reflection-journal-desk.jpeg|images/stock/AdobeStock_1708296893.jpeg|images/reflection-journal-desk.jpg|images/AdobeStock_1708296893.jpeg"
-              onerror="useNextImageSource(this)"
                 alt="An open journal, coffee, and a pen on a quiet desk"
                 loading="lazy"
               >
-              <div class="service-icon-shell" aria-hidden="true">
+
+              <div class="service-icon" aria-hidden="true">
                 <img src="Icons/17-choosing-a-direction.svg" alt="">
               </div>
             </div>
 
-            <div class="service-card-content">
+            <div class="service-content">
               <div class="service-topline">
                 <span>01</span>
                 <span>Harold Gates</span>
@@ -230,37 +270,40 @@
                 Harold works with people facing change, difficult decisions,
                 stalled goals, relationship concerns, or a loss of direction.
                 His style is encouraging and direct, with a focus on choices
-                and steps that make sense in daily life.
+                that make sense in daily life.
               </p>
 
-              <p class="service-topics">
-                Life changes · Difficult decisions · Motivation · Follow-through ·
-                Relationships · Personal goals
-              </p>
+              <ul class="service-topic-list" aria-label="Life coaching topics">
+                <li>Life changes</li>
+                <li>Difficult decisions</li>
+                <li>Motivation</li>
+                <li>Follow-through</li>
+                <li>Relationships</li>
+                <li>Personal goals</li>
+              </ul>
 
               <a class="service-link" href="#get-started">
-                Schedule with Harold
+                Start with Harold
                 <span aria-hidden="true">→</span>
               </a>
             </div>
           </article>
 
           <article class="service-card service-card-warm reveal">
-            <div class="service-image-wrap">
+            <div class="service-media">
               <img
                 class="service-image service-image-portrait"
                 src="images/stock/positive-self-image-mirror.jpg.jpeg"
-              data-fallbacks="images/stock/positive-self-image-mirror.jpeg|images/stock/AdobeStock_2035390616.jpeg|images/positive-self-image-mirror.jpg|images/AdobeStock_2035390616.jpeg"
-              onerror="useNextImageSource(this)"
                 alt="A woman smiling gently at her reflection"
                 loading="lazy"
               >
-              <div class="service-icon-shell" aria-hidden="true">
+
+              <div class="service-icon" aria-hidden="true">
                 <img src="Icons/08-open-hands.svg" alt="">
               </div>
             </div>
 
-            <div class="service-card-content">
+            <div class="service-content">
               <div class="service-topline">
                 <span>02</span>
                 <span>Roxanne Gates</span>
@@ -271,17 +314,148 @@
 
               <p>
                 Roxanne supports people working through body image concerns,
-                recovery challenges, setbacks, and daily routines. Her approach
-                is gentle and respectful, with room to move slowly and choose
-                goals that feel realistic rather than perfect.
+                recovery challenges, setbacks, and daily routines. Her
+                approach is gentle and respectful, with room to move slowly and
+                choose goals that feel realistic rather than perfect.
               </p>
 
-              <p class="service-topics">
-                Body image · Recovery support · Daily routines · Setbacks ·
-                Sustainable goals
-              </p>
+              <ul class="service-topic-list" aria-label="Recovery and wellness coaching topics">
+                <li>Body image</li>
+                <li>Recovery support</li>
+                <li>Daily routines</li>
+                <li>Setbacks</li>
+                <li>Sustainable goals</li>
+                <li>Self-compassion</li>
+              </ul>
 
               <a class="service-link" href="#get-started">
+                Start with Roxanne
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="possibilities-section section">
+      <div class="container possibilities-layout">
+        <div class="possibilities-heading reveal">
+          <p class="section-label">What coaching can make room for</p>
+          <h2>Small changes can create more breathing room.</h2>
+          <p>
+            The work is shaped around your life. These are examples of the
+            kinds of progress clients may choose to work toward, not promises
+            or guaranteed outcomes.
+          </p>
+        </div>
+
+        <div class="possibility-grid">
+          <article class="possibility-card reveal">
+            <div class="possibility-icon">
+              <img src="Icons/07-awareness.svg" alt="" aria-hidden="true">
+            </div>
+            <h3>More clarity</h3>
+            <p>Separate what matters from the noise around it.</p>
+          </article>
+
+          <article class="possibility-card reveal">
+            <div class="possibility-icon">
+              <img src="Icons/04-renewal.svg" alt="" aria-hidden="true">
+            </div>
+            <h3>Steadier routines</h3>
+            <p>Create rhythms that are supportive and realistic.</p>
+          </article>
+
+          <article class="possibility-card reveal">
+            <div class="possibility-icon">
+              <img src="Icons/29-goal-setting.svg" alt="" aria-hidden="true">
+            </div>
+            <h3>Useful goals</h3>
+            <p>Choose goals that fit your needs, values, and capacity.</p>
+          </article>
+
+          <article class="possibility-card reveal">
+            <div class="possibility-icon">
+              <img src="Icons/05-take-action.svg" alt="" aria-hidden="true">
+            </div>
+            <h3>Follow-through</h3>
+            <p>Turn a good intention into one next action you can use.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="coaches-section section" id="coaches">
+      <div class="container">
+        <div class="coaches-heading reveal">
+          <p class="section-label">Meet your coaches</p>
+          <h2>The relationship should feel human, honest, and useful.</h2>
+          <p>
+            Harold and Roxanne each bring a different style and focus. Both
+            begin by listening, asking thoughtful questions, and meeting you
+            where you are.
+          </p>
+        </div>
+
+        <div class="coach-grid">
+          <article class="coach-card reveal">
+            <div class="coach-photo-wrap">
+              <img
+                class="coach-photo"
+                src="images/Harold-Gates-Coach.jpg"
+                alt="Harold Gates, life coach"
+                loading="lazy"
+              >
+              <span class="coach-number">01</span>
+            </div>
+
+            <div class="coach-content">
+              <p class="coach-role">Life coach</p>
+              <h3>Harold Gates</h3>
+              <p>
+                Harold works with people who are ready to look honestly at
+                where they are, even when they are not sure what comes next. He
+                listens for the part of the problem that matters most and helps
+                make it easier to work with.
+              </p>
+              <p>
+                Expect practical questions, honest conversation, and steps
+                that make sense outside the coaching session.
+              </p>
+              <a class="coach-link" href="#get-started">
+                Schedule with Harold
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="coach-card coach-card-accent reveal">
+            <div class="coach-photo-wrap">
+              <img
+                class="coach-photo"
+                src="images/roxanne-gates-coach.jpg"
+                alt="Roxanne Gates, recovery and wellness coach"
+                loading="lazy"
+              >
+              <span class="coach-number">02</span>
+            </div>
+
+            <div class="coach-content">
+              <p class="coach-role">Recovery and wellness coach</p>
+              <h3>Roxanne Gates</h3>
+              <p>
+                Roxanne offers a steady place to talk about body image,
+                recovery, routines, and the pressures that can make change feel
+                harder. You do not have to make the story sound neat before you
+                bring it to her.
+              </p>
+              <p>
+                She helps clients notice what is working, make sense of
+                setbacks, and choose goals that feel realistic rather than
+                perfect.
+              </p>
+              <a class="coach-link" href="#get-started">
                 Schedule with Roxanne
                 <span aria-hidden="true">→</span>
               </a>
@@ -295,278 +469,160 @@
       <div class="container">
         <div class="process-heading reveal">
           <div>
-            <p class="section-label">What happens first</p>
-            <h2>Start with a conversation, not a commitment.</h2>
+            <p class="section-label light-label">A simple way to begin</p>
+            <h2>Three steps, no pressure.</h2>
           </div>
-
           <p>
-            The first step is simply a chance to meet, ask questions, and see
-            whether coaching feels like a good fit.
+            The first conversation is a chance to meet and ask questions. You
+            can decide what comes next after you have a better sense of the fit.
           </p>
         </div>
 
         <div class="process-grid">
           <article class="process-card reveal">
-            <div class="process-icon-shell">
+            <span class="process-number">01</span>
+            <div class="process-icon">
               <img src="Icons/09-time-management.svg" alt="" aria-hidden="true">
             </div>
-            <span class="process-number">01</span>
             <h3>Choose a time</h3>
             <p>
               Use the shared calendar to request a complimentary consultation
-              with Harold or Roxanne at a time that works for you.
+              with Harold or Roxanne.
             </p>
           </article>
 
-          <article class="process-card reveal">
-            <div class="process-icon-shell">
+          <article class="process-card process-card-shift reveal">
+            <span class="process-number">02</span>
+            <div class="process-icon">
               <img src="Icons/26-one-on-one-coaching.svg" alt="" aria-hidden="true">
             </div>
-            <span class="process-number">02</span>
             <h3>Talk it through</h3>
             <p>
-              Share what you hope could feel different, ask questions, and get
-              a sense of the coach's approach without pressure to decide.
+              Share what you hope could feel different and get a sense of the
+              coach's approach.
             </p>
           </article>
 
           <article class="process-card reveal">
-            <div class="process-icon-shell">
+            <span class="process-number">03</span>
+            <div class="process-icon">
               <img src="Icons/30-agreement.svg" alt="" aria-hidden="true">
             </div>
-            <span class="process-number">03</span>
-            <h3>Complete next steps</h3>
+            <h3>Choose your next step</h3>
             <p>
               When coaching feels like a good fit, complete the shared intake
-              form and client agreement before your first paid session.
+              form and agreement.
             </p>
           </article>
         </div>
-      </div>
-    </section>
 
-    <section class="virtual-section">
-      <div class="container virtual-card reveal">
-        <div class="virtual-image-wrap">
-          <img
-            class="virtual-image"
-            src="images/stock/virtual-coaching-session.jpg.jpeg"
-              data-fallbacks="images/stock/virtual-coaching-session.jpeg|images/stock/AdobeStock_2106586645.jpeg|images/virtual-coaching-session.jpg|images/AdobeStock_2106586645.jpeg"
-              onerror="useNextImageSource(this)"
-            alt="A woman participating in a virtual conversation from home"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="virtual-copy">
-          <p class="section-label">Meet where you are comfortable</p>
-          <h2>Coaching can fit into real life.</h2>
-          <p>
-            Virtual appointments let you join from a private place that works
-            for you. In-person appointments are also available, with meeting
-            details shared after your time is confirmed.
-          </p>
-
-          <div class="virtual-details">
-            <div>
-              <strong>Virtual</strong>
-              <span>Meet online from a private space.</span>
-            </div>
-            <div>
-              <strong>In person</strong>
-              <span>Location details are shared privately.</span>
-            </div>
+        <div class="meeting-card reveal">
+          <div class="meeting-image-wrap">
+            <img
+              class="meeting-image"
+              src="images/stock/virtual-coaching-session.jpg.jpeg"
+              alt="A woman joining a virtual conversation from home"
+              loading="lazy"
+            >
           </div>
 
-          <a class="button secondary-button" href="#get-started">
-            View appointment steps
-          </a>
-        </div>
-      </div>
-    </section>
+          <div class="meeting-copy">
+            <p class="section-label">Meet where you are comfortable</p>
+            <h2>Coaching can fit into real life.</h2>
+            <p>
+              Virtual appointments let you join from a private place that
+              works for you. In-person appointments are also available, with
+              meeting details shared after your time is confirmed.
+            </p>
 
-    <section class="coaches-section section" id="coaches">
-      <div class="container">
-        <div class="section-heading coaches-heading reveal">
-          <p class="section-label">Meet Harold and Roxanne</p>
-          <h2>A good coaching relationship should feel like a real conversation.</h2>
-        </div>
-
-        <div class="coach-list">
-          <article class="coach-profile reveal">
-            <div class="coach-image-wrap">
-              <img
-                class="coach-photo"
-                src="images/Harold-Gates-Coach.jpg"
-                alt="Harold Gates, life coach"
-                loading="lazy"
-              >
-              <span class="coach-index">01</span>
+            <div class="meeting-options">
+              <div>
+                <strong>Virtual</strong>
+                <span>Meet online from a private space.</span>
+              </div>
+              <div>
+                <strong>In person</strong>
+                <span>Location details are shared privately.</span>
+              </div>
             </div>
 
-            <div class="coach-copy">
-              <p class="coach-role">Life coach</p>
-              <h3>Harold Gates</h3>
-
-              <p>
-                Harold works with people who are ready to look honestly at
-                where they are, even when they are not sure what comes next. He
-                listens for the part of the problem that matters most and helps
-                make it easier to work with.
-              </p>
-
-              <p>
-                His style is encouraging and direct. Expect practical questions,
-                honest conversation, and steps that make sense outside the
-                coaching session, not just on paper.
-              </p>
-
-              <a class="coach-link" href="#get-started">
-                Schedule a consultation with Harold →
-              </a>
-            </div>
-          </article>
-
-          <article class="coach-profile coach-profile-reverse reveal">
-            <div class="coach-image-wrap">
-              <img
-                class="coach-photo"
-                src="images/roxanne-gates-coach.jpg"
-                alt="Roxanne Gates, coach"
-                loading="lazy"
-              >
-              <span class="coach-index">02</span>
-            </div>
-
-            <div class="coach-copy">
-              <p class="coach-role">Recovery and wellness coach</p>
-              <h3>Roxanne Gates</h3>
-
-              <p>
-                Roxanne offers a steady place to talk about body image,
-                recovery, routines, and the pressures that can make change feel
-                harder. You do not have to make the story sound neat before you
-                bring it to her.
-              </p>
-
-              <p>
-                She listens with care and helps clients notice what is working,
-                make sense of setbacks, and choose goals that feel realistic
-                rather than perfect.
-              </p>
-
-              <a class="coach-link" href="#get-started">
-                Schedule a consultation with Roxanne →
-              </a>
-            </div>
-          </article>
+            <a class="button outline-button" href="#get-started">
+              See the next steps
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="get-started-section section" id="get-started">
-      <div class="container">
-        <div class="get-started-heading reveal">
+      <div class="container get-started-layout">
+        <div class="get-started-copy reveal">
           <p class="section-label">Ready when you are</p>
-          <h2>Start with one conversation.</h2>
-          <p class="get-started-intro">
-            Harold and Roxanne use one shared calendar, one intake form, and one
-            client agreement. Begin with the consultation calendar. Complete
-            the forms after you and your coach decide to move forward.
+          <h2>Your first step is the shared consultation calendar.</h2>
+          <p>
+            Harold and Roxanne use one shared calendar, one intake form, and
+            one client agreement. Begin by choosing a consultation time. The
+            forms are completed after you and your coach decide to move forward.
           </p>
-        </div>
 
-        <div class="get-started-grid">
-          <article class="get-started-card get-started-card-primary reveal">
-            <div class="get-started-icon">
-              <img src="Icons/09-time-management.svg" alt="" aria-hidden="true">
-            </div>
-            <p class="get-started-label">Begin here</p>
-            <h3>Schedule a consultation</h3>
-            <p class="get-started-card-text">
-              Choose a time for a complimentary consultation with Harold or
-              Roxanne. This first conversation gives you space to explain what
-              has been on your mind, ask questions, and learn more about the
-              coach's approach.
-            </p>
-
-            <a
-              class="button primary-button get-started-button"
-              href="https://calendar.app.google/16QZK1eRtKJX5RTVA"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open shared calendar
-              <span aria-hidden="true">↗</span>
-            </a>
-          </article>
-
-          <article class="get-started-card reveal">
-            <div class="get-started-icon">
-              <img src="Icons/20-evaluation.svg" alt="" aria-hidden="true">
-            </div>
-            <p class="get-started-label">After your consultation</p>
-            <h3>Complete the intake form</h3>
-            <p class="get-started-card-text">
-              Share basic contact information, your coaching goals, and what
-              you would like support with. You only need to provide enough
-              detail to help begin the conversation.
-            </p>
-
-            <a
-              class="button secondary-start-button get-started-button"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfrKH8PKD7LKMr_wX4Urps_A9xrCR-aDLBi9aPlaFn-XpjvGw/viewform?usp=header"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open client intake
-              <span aria-hidden="true">↗</span>
-            </a>
-          </article>
-
-          <article class="get-started-card reveal">
-            <div class="get-started-icon">
-              <img src="Icons/30-agreement.svg" alt="" aria-hidden="true">
-            </div>
-            <p class="get-started-label">Before coaching begins</p>
-            <h3>Review the client agreement</h3>
-            <p class="get-started-card-text">
-              Review the coaching expectations, cancellation and payment
-              policies, privacy information, and service boundaries before
-              your first paid session.
-            </p>
-
-            <a
-              class="button secondary-start-button get-started-button"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdqRzlbjstSmctxIMFyWC5ImRdz56K5l7mAOuhKYcOrHaQ9aw/viewform?usp=header"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Review client agreement
-              <span aria-hidden="true">↗</span>
-            </a>
-          </article>
-        </div>
-
-        <div class="get-started-note reveal">
-          <div class="get-started-note-icon" aria-hidden="true">
-            <img src="Icons/13-client-protection.svg" alt="">
-          </div>
-
-          <div>
-            <h3>Protect your privacy when completing the forms.</h3>
+          <div class="get-started-note">
+            <img src="Icons/13-client-protection.svg" alt="" aria-hidden="true">
             <p>
               Please do not submit diagnoses, medical records, treatment
-              records, or information about an urgent or emergency situation
-              through the calendar or forms.
+              records, or urgent concerns through the calendar or forms.
             </p>
           </div>
+        </div>
+
+        <div class="action-panel reveal">
+          <a
+            class="action-row action-row-primary"
+            href="https://calendar.app.google/16QZK1eRtKJX5RTVA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="action-row-number">01</span>
+            <span class="action-row-copy">
+              <small>Begin here</small>
+              <strong>Schedule a complimentary consultation</strong>
+            </span>
+            <span class="action-row-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a
+            class="action-row"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfrKH8PKD7LKMr_wX4Urps_A9xrCR-aDLBi9aPlaFn-XpjvGw/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="action-row-number">02</span>
+            <span class="action-row-copy">
+              <small>After your consultation</small>
+              <strong>Complete the client intake</strong>
+            </span>
+            <span class="action-row-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a
+            class="action-row"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdqRzlbjstSmctxIMFyWC5ImRdz56K5l7mAOuhKYcOrHaQ9aw/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="action-row-number">03</span>
+            <span class="action-row-copy">
+              <small>Before coaching begins</small>
+              <strong>Review the client agreement</strong>
+            </span>
+            <span class="action-row-arrow" aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
     </section>
 
     <section class="statement-section">
-      <div class="statement-overlay"></div>
+      <div class="statement-overlay" aria-hidden="true"></div>
       <div class="container statement-inner reveal">
         <p class="section-label light-label">Come as you are</p>
         <h2>
@@ -578,66 +634,55 @@
     </section>
 
     <section class="contact-section section" id="contact">
-      <div class="container contact-grid">
+      <div class="container contact-layout">
         <div class="contact-copy reveal">
           <p class="section-label">Talk with us</p>
           <h2>What has been on your mind lately?</h2>
-
           <p>
-            Use the consultation calendar, call, or email to ask about
-            availability. Let us know whether you would like to speak with
-            Harold or Roxanne, or simply say that you are not sure where to
-            start. Reaching out does not commit you to coaching.
+            Use the calendar, call, or email to ask about availability. Tell us
+            whether you would like to speak with Harold or Roxanne, or simply
+            say that you are not sure where to start.
           </p>
 
           <div class="contact-options">
             <a href="tel:+12173710506">
-              <span>Call</span>
+              <small>Call</small>
               <strong>217-371-0506</strong>
+              <span aria-hidden="true">→</span>
             </a>
 
             <a href="mailto:coachopengates@gmail.com">
-              <span>Email</span>
+              <small>Email</small>
               <strong>coachopengates@gmail.com</strong>
+              <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
 
-        <aside class="contact-card reveal">
-          <div class="contact-card-image-wrap">
-            <img
-              class="contact-card-image"
-              src="images/stock/garden-gate.jpg.jpeg"
-              data-fallbacks="images/stock/garden-gate.jpeg|images/stock/AdobeStock_1582400251.jpeg|images/garden-gate.jpg|images/AdobeStock_1582400251.jpeg"
-              onerror="useNextImageSource(this)"
-              alt="A garden gate surrounded by green vines"
-              loading="lazy"
-            >
-          </div>
+        <aside class="contact-visual reveal">
+          <img
+            class="contact-image"
+            src="images/stock/garden-gate.jpg.jpeg"
+            alt="A garden gate surrounded by green vines"
+            loading="lazy"
+          >
 
-          <div class="contact-card-content">
+          <div class="contact-visual-card">
             <p class="contact-card-label">Appointment options</p>
-            <h3>Meet virtually or in person</h3>
+            <h3>Meet virtually or in person.</h3>
             <p>
-              Virtual coaching lets you meet from a private place that works
-              for you. In-person meeting details are shared after an
-              appointment is confirmed.
+              In-person details are shared after your appointment is confirmed.
+              Open Gates does not publish a home or business address.
             </p>
-
             <a
-              class="button contact-calendar-button"
+              class="button contact-button"
               href="https://calendar.app.google/16QZK1eRtKJX5RTVA"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Open consultation calendar
+              Open the calendar
               <span aria-hidden="true">↗</span>
             </a>
-
-            <p class="contact-note">
-              Keep email and voicemail brief. Please do not include diagnoses,
-              medical records, or details about an urgent situation.
-            </p>
           </div>
         </aside>
       </div>
@@ -668,23 +713,26 @@
 
   <footer class="site-footer">
     <div class="container footer-top">
-      <img
-        class="footer-logo"
-        src="images/open-gates-logo.png"
-        alt="Open Gates Counseling and Coaching"
-      >
+      <div class="footer-brand">
+        <img
+          class="footer-logo"
+          src="images/open-gates-logo.png"
+          alt="Open Gates Counseling and Coaching"
+        >
+        <p>Coaching that begins with a real conversation.</p>
+      </div>
 
-      <p class="footer-statement">
-        A place to talk it through.<br>
-        A way to move forward.
-      </p>
+      <div class="footer-message">
+        <p>A place to talk it through.</p>
+        <p>A way to move forward.</p>
+      </div>
 
       <div class="footer-links">
         <a href="#about">About Open Gates</a>
         <a href="#services">Coaching options</a>
-        <a href="#coaches">Meet Harold &amp; Roxanne</a>
+        <a href="#coaches">Meet Harold and Roxanne</a>
+        <a href="#process">How it works</a>
         <a href="#get-started">Get started</a>
-        <a href="#contact">Contact Open Gates</a>
       </div>
     </div>
 
@@ -693,11 +741,8 @@
         &copy; <span id="current-year"></span>
         Open Gates Counseling &amp; Coaching
       </p>
-
       <p>Virtual and in-person coaching with Harold and Roxanne</p>
     </div>
   </footer>
-
-  <script src="script.js?v=20260730-3"></script>
 </body>
 </html>
