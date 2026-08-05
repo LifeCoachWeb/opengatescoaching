@@ -3,6 +3,8 @@ const navigation = document.querySelector(".site-nav");
 const siteHeader = document.querySelector(".site-header");
 const year = document.querySelector("#current-year");
 const revealElements = document.querySelectorAll(".reveal");
+const accordionTriggers = document.querySelectorAll(".accordion-trigger");
+const navigationLinks = document.querySelectorAll('.site-nav a[href^="#"]:not(.nav-cta)');
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -33,6 +35,12 @@ if (menuButton && navigation) {
     link.addEventListener("click", closeMenu);
   });
 
+  document.addEventListener("click", (event) => {
+    if (!navigation.classList.contains("is-open")) return;
+    if (navigation.contains(event.target) || menuButton.contains(event.target)) return;
+    closeMenu();
+  });
+
   window.addEventListener("resize", () => {
     if (window.innerWidth > 880) {
       closeMenu();
@@ -55,7 +63,7 @@ updateHeaderState();
 window.addEventListener("scroll", updateHeaderState, { passive: true });
 
 if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
+  const revealObserver = new IntersectionObserver(
     (entries, activeObserver) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
@@ -71,10 +79,78 @@ if ("IntersectionObserver" in window) {
   );
 
   revealElements.forEach((element) => {
-    observer.observe(element);
+    revealObserver.observe(element);
   });
 } else {
   revealElements.forEach((element) => {
     element.classList.add("is-visible");
+  });
+}
+
+function closeAccordionItem(trigger) {
+  const panelId = trigger.getAttribute("aria-controls");
+  const panel = panelId ? document.getElementById(panelId) : null;
+
+  trigger.setAttribute("aria-expanded", "false");
+  if (panel) panel.hidden = true;
+}
+
+function openAccordionItem(trigger) {
+  const panelId = trigger.getAttribute("aria-controls");
+  const panel = panelId ? document.getElementById(panelId) : null;
+
+  trigger.setAttribute("aria-expanded", "true");
+  if (panel) panel.hidden = false;
+}
+
+accordionTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    const willOpen = trigger.getAttribute("aria-expanded") !== "true";
+
+    accordionTriggers.forEach((otherTrigger) => {
+      if (otherTrigger !== trigger) {
+        closeAccordionItem(otherTrigger);
+      }
+    });
+
+    if (willOpen) {
+      openAccordionItem(trigger);
+    } else {
+      closeAccordionItem(trigger);
+    }
+  });
+});
+
+if ("IntersectionObserver" in window && navigationLinks.length) {
+  const sectionMap = new Map();
+
+  navigationLinks.forEach((link) => {
+    const targetId = link.getAttribute("href");
+    const target = targetId ? document.querySelector(targetId) : null;
+
+    if (target) {
+      sectionMap.set(target, link);
+    }
+  });
+
+  const navigationObserver = new IntersectionObserver(
+    (entries) => {
+      const visibleEntries = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (!visibleEntries.length) return;
+
+      navigationLinks.forEach((link) => link.classList.remove("is-active"));
+      sectionMap.get(visibleEntries[0].target)?.classList.add("is-active");
+    },
+    {
+      rootMargin: "-28% 0px -60% 0px",
+      threshold: [0.05, 0.2, 0.5]
+    }
+  );
+
+  sectionMap.forEach((link, section) => {
+    navigationObserver.observe(section);
   });
 }
