@@ -4,51 +4,75 @@ const siteHeader = document.querySelector(".site-header");
 const year = document.querySelector("#current-year");
 const revealElements = document.querySelectorAll(".reveal");
 const accordionTriggers = document.querySelectorAll(".accordion-trigger");
-const navigationLinks = document.querySelectorAll('.site-nav a[href^="#"]:not(.nav-cta)');
+const navigationLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+const desktopMenuQuery = window.matchMedia("(min-width: 901px)");
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+let menuReturnTarget = null;
 
 if (year) {
-  year.textContent = new Date().getFullYear();
+  year.textContent = String(new Date().getFullYear());
 }
 
-function closeMenu() {
+function isMenuOpen() {
+  return Boolean(navigation?.classList.contains("is-open"));
+}
+
+function openMenu() {
+  if (!menuButton || !navigation) return;
+
+  menuReturnTarget = document.activeElement;
+  navigation.classList.add("is-open");
+  document.body.classList.add("menu-open");
+  menuButton.setAttribute("aria-expanded", "true");
+  menuButton.setAttribute("aria-label", "Close navigation menu");
+
+  const firstLink = navigation.querySelector("a");
+  firstLink?.focus();
+}
+
+function closeMenu({ returnFocus = false } = {}) {
   if (!menuButton || !navigation) return;
 
   navigation.classList.remove("is-open");
   document.body.classList.remove("menu-open");
   menuButton.setAttribute("aria-expanded", "false");
   menuButton.setAttribute("aria-label", "Open navigation menu");
+
+  if (returnFocus && menuReturnTarget instanceof HTMLElement) {
+    menuReturnTarget.focus();
+  }
 }
 
 if (menuButton && navigation) {
   menuButton.addEventListener("click", () => {
-    const isOpen = navigation.classList.toggle("is-open");
-
-    document.body.classList.toggle("menu-open", isOpen);
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-    menuButton.setAttribute(
-      "aria-label",
-      isOpen ? "Close navigation menu" : "Open navigation menu"
-    );
-  });
-
-  navigation.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!navigation.classList.contains("is-open")) return;
-    if (navigation.contains(event.target) || menuButton.contains(event.target)) return;
-    closeMenu();
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 880) {
-      closeMenu();
+    if (isMenuOpen()) {
+      closeMenu({ returnFocus: true });
+    } else {
+      openMenu();
     }
   });
 
+  navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => closeMenu());
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!isMenuOpen()) return;
+    if (!(event.target instanceof Node)) return;
+    if (navigation.contains(event.target) || menuButton.contains(event.target)) return;
+
+    closeMenu();
+  });
+
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    if (event.key === "Escape" && isMenuOpen()) {
+      closeMenu({ returnFocus: true });
+    }
+  });
+
+  desktopMenuQuery.addEventListener("change", (event) => {
+    if (event.matches) {
       closeMenu();
     }
   });
@@ -62,7 +86,15 @@ function updateHeaderState() {
 updateHeaderState();
 window.addEventListener("scroll", updateHeaderState, { passive: true });
 
-if ("IntersectionObserver" in window) {
+function showAllRevealElements() {
+  revealElements.forEach((element) => {
+    element.classList.add("is-visible");
+  });
+}
+
+if (reducedMotionQuery.matches || !("IntersectionObserver" in window)) {
+  showAllRevealElements();
+} else {
   const revealObserver = new IntersectionObserver(
     (entries, activeObserver) => {
       entries.forEach((entry) => {
@@ -81,26 +113,29 @@ if ("IntersectionObserver" in window) {
   revealElements.forEach((element) => {
     revealObserver.observe(element);
   });
-} else {
-  revealElements.forEach((element) => {
-    element.classList.add("is-visible");
-  });
+}
+
+function getAccordionPanel(trigger) {
+  const panelId = trigger.getAttribute("aria-controls");
+  return panelId ? document.getElementById(panelId) : null;
 }
 
 function closeAccordionItem(trigger) {
-  const panelId = trigger.getAttribute("aria-controls");
-  const panel = panelId ? document.getElementById(panelId) : null;
-
+  const panel = getAccordionPanel(trigger);
   trigger.setAttribute("aria-expanded", "false");
-  if (panel) panel.hidden = true;
+
+  if (panel) {
+    panel.hidden = true;
+  }
 }
 
 function openAccordionItem(trigger) {
-  const panelId = trigger.getAttribute("aria-controls");
-  const panel = panelId ? document.getElementById(panelId) : null;
-
+  const panel = getAccordionPanel(trigger);
   trigger.setAttribute("aria-expanded", "true");
-  if (panel) panel.hidden = false;
+
+  if (panel) {
+    panel.hidden = false;
+  }
 }
 
 accordionTriggers.forEach((trigger) => {
@@ -122,14 +157,14 @@ accordionTriggers.forEach((trigger) => {
 });
 
 if ("IntersectionObserver" in window && navigationLinks.length) {
-  const sectionMap = new Map();
+  const sectionLinkMap = new Map();
 
   navigationLinks.forEach((link) => {
     const targetId = link.getAttribute("href");
-    const target = targetId ? document.querySelector(targetId) : null;
+    const section = targetId ? document.querySelector(targetId) : null;
 
-    if (target) {
-      sectionMap.set(target, link);
+    if (section) {
+      sectionLinkMap.set(section, link);
     }
   });
 
@@ -141,8 +176,14 @@ if ("IntersectionObserver" in window && navigationLinks.length) {
 
       if (!visibleEntries.length) return;
 
-      navigationLinks.forEach((link) => link.classList.remove("is-active"));
-      sectionMap.get(visibleEntries[0].target)?.classList.add("is-active");
+      navigationLinks.forEach((link) => {
+        link.classList.remove("is-active");
+        link.removeAttribute("aria-current");
+      });
+
+      const activeLink = sectionLinkMap.get(visibleEntries[0].target);
+      activeLink?.classList.add("is-active");
+      activeLink?.setAttribute("aria-current", "location");
     },
     {
       rootMargin: "-28% 0px -60% 0px",
@@ -150,7 +191,7 @@ if ("IntersectionObserver" in window && navigationLinks.length) {
     }
   );
 
-  sectionMap.forEach((link, section) => {
+  sectionLinkMap.forEach((link, section) => {
     navigationObserver.observe(section);
   });
 }
